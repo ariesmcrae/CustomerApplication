@@ -1,0 +1,19 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+table {
+    font-family: sans-serif;
+
+}
+
+
+th {
+    background: grey;
+    padding: 20px;
+}
+
+
+td {
+    padding: 20px;
+}
