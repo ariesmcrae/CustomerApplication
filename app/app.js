@@ -1,1 +1,6 @@
-var customersApp = angular.module('customersApp', []);
+(function () {
+	'use strict';
+	angular.module('customersApp', ['ngRoute']);
+
+}());
+

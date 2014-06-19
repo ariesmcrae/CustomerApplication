@@ -9,23 +9,23 @@
             <ul>
                 <li ng-repeat="person in people">{{ person.name }} - {{ person.city }}</li>
             </ul>
-            
+
             <br/>
-            
+
             <table>
                 <tr>
                     <th>Name</th>
-                    <th>City</th>                        
+                    <th>City</th>
                 </tr>
-                
+
                 <tr ng-repeat="person in people">
                     <td>{{ person.name }}</td>
-                    <td>{{ person.city }}</td>                        
-                </tr>                
+                    <td>{{ person.city }}</td>
+                </tr>
             </table>
-            
+
         </div>
-            
-        <script src="angular.js" type="application/javascript"></script>
+
+        <script src="scripts/angular.js" type="application/javascript"></script>
     </body>
 </html>

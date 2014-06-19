@@ -20,7 +20,8 @@
     //workaround so that we're still safe after JS minification for production.
     customersController.$inject = ['$scope'];
 
-    customersApp.controller('CustomersController', customersController);
+    angular.module('customersApp')
+		.controller('CustomersController', customersController);
 
 }());
 
