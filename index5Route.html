@@ -2,7 +2,7 @@
 <html ng-app="customersApp">
     <head>
         <title>Iterate</title>
-        <link rel="stylesheet" type="text/css" href="styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     </head>
 
     <body ng-controller="CustomersController">
@@ -10,7 +10,7 @@
 
         Filter by name: <input type="text" ng-model="customerFilter.name" /><br/><br/>
 
-        <table>
+        <table class="table table-striped">
             <tr>
                 <th ng-click="doSort('name')">Name</th>
                 <th ng-click="doSort('city')">City</th>
