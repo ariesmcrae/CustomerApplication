@@ -2,17 +2,23 @@
 
     "use strict";
 
-    var customersController = function ($scope) {
+    var ordersController = function ($scope, $routeParams) {
+        var customerId = $routeParams.customerId;
+        var orders = null;
 
-        $scope.sortByCustomerProperty = 'name'; //default sort
-        $scope.isSortReversed = false; //default
+        function init() {
+            //search the customers for customerId
+            var numberOfCustomers = $scope.customers.length;
 
-        $scope.doSort = function (theCustomerProperty) {
-            $scope.sortByCustomerProperty = theCustomerProperty;
-            $scope.isSortReversed = !$scope.isSortReversed;
-        };
+            for (var i = 0; i < numberOfCustomers; i++) {
+                if ($scope.customers[i].id === parseInt(customerId)) {
+                    $scope.orders = $scope.customers[1].orders;
+                    break;
+                }
+            }
+        }
 
-        $scope.customers = [
+        $scope.customers= [
             {
                 id: 1,
                 joined: '2000-12-02',
@@ -63,9 +69,9 @@
             {
                 id: 4,
                 joined: '1995-03-28',
-                name: 'Dave',
-                city: 'Seattle',
-                orderTotal: 101.50,
+                name:'Dave',
+                city:'Seattle',
+                orderTotal:101.50,
                 orders: [
                     {
                         id: 5,
@@ -74,16 +80,18 @@
                     }
                 ]
             }
-        ]; //customers data
+        ];
 
-    }; // customersController
+        init();
+
+    }; //orders controller
 
 
     //workaround so that we're still safe after JS minification for production.
-    customersController.$inject = ['$scope'];
+    ordersController.$inject = ['$scope', '$routeParams'];
 
     angular.module('customersApp')
-		.controller('CustomersController', customersController);
+		.controller('OrdersController', ordersController);
 
 }());
 

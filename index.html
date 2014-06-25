@@ -1,26 +1,17 @@
-<!doctype hthml>
-<html ng-app>
+<!doctype html>
+<html ng-app="customersApp">
     <head>
-        <title>Customer Application</title>
-        <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+        <title>Customers Application</title>
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
     </head>
-    
-    <body ng-init="data={name:'James', isVisible: true}">
-        <div ng-cloak>
-            <div ng-show="data.isVisible">
-                Name: <input type="text" ng-model="data.name" />{{ data.name }}        
-            </div>
-        </div>
 
-        <!--
-        <div ng-hide="isHidden">
-            Name: <input type="text" ng-model="name" />{{ name }}        
-        </div>
+    <body>
+        <div ng-view></div>
 
-        Hide: <input type="checkbox" ng-model="isHidden" /> <br/>
-        
-        <button ng-click="name='Michelle'">Change Name</button>
-        -->
-        <script type="application/javascript" src="scripts/angular.js"></script>
+        <script src="scripts/angular.js" type="application/javascript"></script>
+        <script src="scripts/angular-route.js" type="application/javascript"></script>
+        <script src="app/app.js" type="application/javascript"></script>
+        <script src="app/controllers/CustomersController.js" ></script>
+        <script src="app/controllers/OrdersController.js" type="application/javascript"></script>
     </body>
 </html>
