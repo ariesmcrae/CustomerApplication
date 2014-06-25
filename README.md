@@ -1,6 +1,6 @@
-# AngularJS Canonical Application: Customer App
+### AngularJS Canonical Application: Customer App
 ===============================================
-#### A cononical customer application showcasing AngularJS
+A cononical customer application showcasing AngularJS
 
 ##How to run
 * Install NodeJS
