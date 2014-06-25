@@ -2,96 +2,15 @@
 
     "use strict";
 
-    var ordersController = function ($scope, $routeParams) {
-        var customerId = $routeParams.customerId;
-        var orders = null;
-
-        function init() {
-            //search the customers for customerId
-            var numberOfCustomers = $scope.customers.length;
-
-            for (var i = 0; i < numberOfCustomers; i++) {
-                if ($scope.customers[i].id === parseInt(customerId)) {
-                    $scope.orders = $scope.customers[1].orders;
-                    break;
-                }
-            }
-        }
-
-        $scope.customers= [
-            {
-                id: 1,
-                joined: '2000-12-02',
-                name: 'John',
-                city: 'Chandler',
-                orderTotal: 9.9956,
-                orders: [
-                    {
-                        id: 1,
-                        product: 'Shoes',
-                        total: 9.9956
-                    }
-                ]
-            },
-            {
-                id: 2,
-                joined: '1965-01-25',
-                name: 'Zed',
-                city: 'Las Vegas',
-                orderTotal: 19.99,
-                orders: [
-                    {
-                        id: 2,
-                        product: 'Baseball',
-                        total: 9.995
-                    },
-                    {
-                        id: 3,
-                        product: 'Bat',
-                        total: 9.995
-                    }
-                ]
-            },
-            {
-                id: 3,
-                joined: '1944-06-15',
-                name: 'Tina',
-                city: 'New York',
-                orderTotal: 44.99,
-                orders: [
-                    {
-                        id: 4,
-                        product: 'Headphones',
-                        total: 44.99
-                    }
-                ]
-            },
-            {
-                id: 4,
-                joined: '1995-03-28',
-                name:'Dave',
-                city:'Seattle',
-                orderTotal:101.50,
-                orders: [
-                    {
-                        id: 5,
-                        product: 'Kindle',
-                        total: 101.50
-                    }
-                ]
-            }
-        ];
-
-        init();
-
-    }; //orders controller
-
+    var ordersController = function ($scope, $routeParams, CustomersFactory) {
+        $scope.customer = CustomersFactory.getCustomer($routeParams.customerId);
+    };
 
     //workaround so that we're still safe after JS minification for production.
-    ordersController.$inject = ['$scope', '$routeParams'];
+    ordersController.$inject = ['$scope', '$routeParams', 'CustomersFactory'];
 
-    angular.module('customersApp')
-		.controller('OrdersController', ordersController);
+    //register controller with angular
+    angular.module('customersApp').controller('OrdersController', ordersController);
 
 }());
 
