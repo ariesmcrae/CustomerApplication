@@ -3,7 +3,13 @@
     "use strict";
 
     var ordersController = function ($scope, $routeParams, CustomersFactory) {
-        $scope.customer = CustomersFactory.getCustomer($routeParams.customerId);
+        CustomersFactory.getCustomer($routeParams.customerId)
+            .success(function(customer) {
+                $scope.customer = customer;
+            })
+            .error(function(data, status, headers, config) {
+                console.error('Error returned from CustomersFactory.getCustomer');
+            });
     };
 
     //workaround so that we're still safe after JS minification for production.
