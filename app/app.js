@@ -1,22 +1,25 @@
-(function () {
-	'use strict';
+(function() {
 
-	var app = angular.module('customersApp', ['ngRoute']);
+    var app = angular.module('customersApp', ['ngRoute', 'ngAnimate']);
 
     app.config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'CustomersController',
+                controller: 'customersController',
                 templateUrl: 'app/views/customers.html'
             })
 
             .when('/orders/:customerId', {
-                controller: 'OrdersController',
-                templateUrl: 'app/views/orders.html'
+                controller: 'orderController',
+                templateUrl: 'app/views/order.html'
             })
 
-            .otherwise({ redirectTo: '/' });
+            .when('/orders', {
+                controller: 'allOrdersController',
+                templateUrl: 'app/views/allOrders.html'
+            })
+
+            .otherwise( { redirectTo: '/' } );
     });
 
 }());
-

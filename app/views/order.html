@@ -6,7 +6,7 @@
         <th>Total</th>
     </tr>
 
-    <tr ng-repeat="order in customer.orders">
+    <tr ng-repeat="order in customer.orders" class="repeat-animation">
         <td>{{ order.product }}</td>
         <td>{{ order.total | currency}}</td>
     </tr>

@@ -10,16 +10,17 @@ Filter by name: <input type="text" ng-model="customerFilter.name" />
         <th ng-click="doSort('city')">City</th>
         <th ng-click="doSort('orderTotal')">Order Total</th>
         <th ng-click="doSort('joined')">Joined</th>
+		<th>Orders</th>
         <th>&nbsp;</th>
     </tr>
 
-    <!--limitTo:3 |-->
-    <tr ng-repeat="customer in customers | orderBy:sortByCustomerProperty:isSortReversed | filter:customerFilter">
+    <tr ng-repeat="customer in customers | orderBy:sortByCustomerProperty:isSortReversed | filter:customerFilter" class="repeat-animation">
         <td>{{ customer.name | uppercase }}</td>
         <td>{{ customer.city }}</td>
         <td>{{ customer.orderTotal | currency }}</td>
         <td>{{ customer.joined | date:'dd MMM yyyy' }}</td>
         <td><a href="#/orders/{{ customer.id }}">View Orders</a></td>
+		<td class="center"><span class="glyphicon glypicon-remove delete" ng-click="deleteCustomer(customer.id)"></span></td>
     </tr>
 </table>
 

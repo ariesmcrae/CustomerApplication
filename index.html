@@ -1,21 +1,36 @@
 <!doctype html>
 <html ng-app="customersApp">
-    <head>
-        <title>Customers Application</title>
-        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
-    </head>
+<head>
+    <title>Customers Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="styles/animations.css" rel="stylesheet" type="text/css" />
+</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-default">
+				<ul class="nav navbar-nav">
+					<li><a href="#/customers">Customers</a></li>
+					<li><a href="#/orders">Orders</a></li>
+				</ul>
+			</nav>
+		</header>
 
-    <body>
-        <div ng-view></div>
+		<main>
+			<div ng-view />
+		</main>
 
-        <script src="scripts/angular.js" type="application/javascript"></script>
-        <script src="scripts/angular-route.js" type="application/javascript"></script>
-        <script src="app/app.js" type="application/javascript"></script>
-        <script src="app/controllers/CustomersController.js" ></script>
-        <script src="app/controllers/OrdersController.js" type="application/javascript"></script>
-        <script src="app/services/CustomersFactory.js" type="application/javascript"></script>
-        <script src="app/services/Values.js" type="application/javascript"></script>
-    </body>
+		<script src="scripts/angular.js" type="application/javascript"></script>
+		<script src="scripts/angular-route.js" type="application/javascript"></script>
+		<script src="scripts/angular-animate.js" type="application/javascript"></script>
 
+		<script src="app/app.js" type="application/javascript"></script>
 
+		<script src="app/controllers/customersController.js" type="application/javascript"></script>
+		<script src="app/controllers/orderController.js" type="application/javascript"></script>
+		<script src="app/controllers/allOrdersController.js" type="application/javascript"></script>
+
+		<script src="app/services/customersFactory.js" type="application/javascript"></script>
+		<script src="app/services/values.js" type="application/javascript"></script>
+	</body>
 </html>
