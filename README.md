@@ -11,3 +11,4 @@ A cononical customer application showcasing AngularJS
 ##Screen shots
 ![Customers](https://raw.githubusercontent.com/ariesmcrae/CustomerApplication/master/images/CustomerApplication.png)
 ![Order](https://raw.githubusercontent.com/ariesmcrae/CustomerApplication/master/images/Order.png)
+![Orders](https://raw.githubusercontent.com/ariesmcrae/CustomerApplication/master/images/Orders.png)
